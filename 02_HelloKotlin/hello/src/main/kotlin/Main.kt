@@ -1,15 +1,26 @@
 fun main() {
-    println("Hi my name is Boris")
-
-    println("I was very many years ago )) ") // Мне 38 лет
-    /*  Я не увидел что нужно
-    оставить многострочный коментарий
-    хотел написть
-    println(38) */
-
-    print('I' + " ")
-    print("want to be" + ' ' + "a ")
-    print("")
-    print("programmer")
-
+    val firstName = "Boris" //  именем.
+    val lastName = "Trifonov" //  фамилией.
+    var height = 172.5
+    var weight = 79.6f
+    var isChild: Boolean = height < 150 || weight < 40  // 150 см или вес меньше 40 кг.
+    var info = """   
+        firstName - $firstName
+        lastName - $lastName
+        height - $height
+        weight - $weight
+        isChild - $isChild
+    """.trimIndent()
+    println(info)
+    println()
+    height = 100.5
+    isChild = height < 150 || weight < 40
+    info = """   
+        firstName - $firstName
+        lastName - $lastName
+        height - $height
+        weight - $weight
+        isChild - $isChild
+    """.trimIndent()
+    println(info)
 }
