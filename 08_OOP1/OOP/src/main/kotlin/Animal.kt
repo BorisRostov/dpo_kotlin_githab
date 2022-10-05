@@ -6,7 +6,8 @@ open class Animal (val name: String,
                    var maxage: Int = 20,
                    ) {
     open var currentage: Int = Random.nextInt(1..5)
-    var isTooOld = currentage >= maxage
+    var isTooOld: Boolean
+    get() = currentage >= maxage
 
     fun eat() {
         energy += 3

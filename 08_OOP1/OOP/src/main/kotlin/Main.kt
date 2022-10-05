@@ -2,36 +2,38 @@ import kotlin.random.Random
 
 fun main() {
     val myNatureReserve = NatureReserve()
-    myNatureReserve.currenzoo =
-        (myNatureReserve.animal + myNatureReserve.fish + myNatureReserve.bird + myNatureReserve.dog) as MutableList<Animal>
+    println("number of cycles)
+    val n: Int = readln().toInt()
 
-    for (i in 1..2){
-        myNatureReserve.currenzoo.forEach {
-        when ((0..4).random()) {
-            0 -> it.info()
-            1 -> {  it.eat()
+    for (i in 1..n){      // цикла n
+        myNatureReserve.zoo.forEach {
+            when ((1..4).random()) {
+                0 -> it.info()      // вывод этой информации я убрал что бы не заграмождать
+                1 -> {  it.eat()
                     it.info() }
-            2 -> {  it.move()
+                2 -> {  it.move()
                     it.info() }
-            3 -> {
-                it.sleep()
-                it.info() }
-            4 -> {
-                var child = it.newchild()
-                child.let {
-                    myNatureReserve.childzoo.add(child)
-                } } } } }
-
-    myNatureReserve.currenzoo.forEach {
+                3 -> {
+                    it.sleep()
+                    it.info() }
+                4 -> {
+                    var child = it.newchild()
+                    child.let {
+                        myNatureReserve.childzoo.add(child)
+                    } } } } }
+    println(myNatureReserve.zoo)
+    myNatureReserve.zoo.forEach {
         if (it.isTooOld) myNatureReserve.deathzoo.add(it)
     }
+    myNatureReserve.zoo.removeAll(myNatureReserve.deathzoo)
+    myNatureReserve.zoo.addAll(myNatureReserve.childzoo)
 
-    println(myNatureReserve.currenzoo)
-    println(myNatureReserve.deathzoo)
-    println(myNatureReserve.childzoo)
-    myNatureReserve.currenzoo.removeAll(myNatureReserve.deathzoo)
-    println(myNatureReserve.currenzoo + myNatureReserve.childzoo)
-
+    println("""
+        for $n cycles in our zoo there 
+        death ${myNatureReserve.deathzoo.size} : ${myNatureReserve.deathzoo}
+        birth ${myNatureReserve.childzoo.size} : ${myNatureReserve.childzoo}
+        are ${myNatureReserve.zoo.size} : ${myNatureReserve.zoo}
+    """.trimIndent())
 }
 
 
