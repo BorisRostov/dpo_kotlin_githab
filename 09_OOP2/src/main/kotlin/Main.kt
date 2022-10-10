@@ -1,9 +1,8 @@
-
+val deb = Tinkof(1000,100,0.05)
+val credAlfaBank = AlfaBank(1000, 20000, 20000, 0.04)
+val credSber = CreditCard(1000, 10000, 10000)
 
 fun main() {
-    val deb = Tinkof(1000,100,0.05)
-    val credAlfaBank = AlfaBank(1000, 20000, 10000, 0.04)
-    val credSber = CreditCard(1000, 10000, 10000)
 
     lateinit var viborUser: BankCard
 
@@ -23,25 +22,15 @@ fun main() {
         }
         "2" -> {
             viborUser = credAlfaBank
-            println("You have chosen a credit card")
-            println(
-                """
-Credit limit: ${viborUser.creditlimit}
-Credit part: ${viborUser.creditpart}
-Own part: ${viborUser.balance}
-        """.trimMargin()
-            )
+            println("You have chosen a Alfa credit card")
+            println("Credit limit: ${viborUser.creditlimit}")
+            viborUser.getinfoavailablemoney()
         }
         "3" -> {
             viborUser = credSber
-            println("You have chosen a credit card")
-            println(
-                """
-Credit limit: ${viborUser.creditlimit}
-Credit part: ${viborUser.creditpart}
-Own part: ${viborUser.balance}
-        """.trimMargin()
-            )
+            println("You have chosen a Sber credit card")
+            println("Credit limit: ${viborUser.creditlimit}")
+            viborUser.getinfoavailablemoney()
         }
         else -> {
             println("Incorrect input")
@@ -57,10 +46,33 @@ what kind of operation do you want to perform?
 4 - Change the card  
     """.trimIndent()
     )
+    fun oper(a : String) {
+        when {
+            a == "1" -> {
+                val sum: Int = readln().toInt()
+                viborUser.replenish(sum)
+                viborUser.getinfoavailablemoney()}
+            a == "2" -> {
+                val sum: Int = readln().toInt()
+                viborUser.topay(sum)
+                viborUser.getinfoavailablemoney()
+            }
+            a == "3" -> viborUser.getinfoavailablemoney()
+            a == "4" -> {
+                println("Change the card")
+                exit()
+            }
+            else -> {
+                println("Incorrect input")
+                return
+            }
+        }
+    }
     while(true){
-    viborUser.oper(readln())}
-
+        vibor = readln()
+        oper(vibor)}
 }
+
 fun exit() {
     return main()
 }
