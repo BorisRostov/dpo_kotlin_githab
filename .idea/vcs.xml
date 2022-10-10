@@ -3,5 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/05_ConditionalExpressions_Loops/Homework2/funfib" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/10_OOP3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/10_OOP3/CurrencyConverter" vcs="Git" />
   </component>
 </project>
