@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+<<<<<<< HEAD
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/05_ConditionalExpressions_Loops/Homework2/funfib" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/10_OOP3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/10_OOP3/CurrencyConverter" vcs="Git" />
+=======
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+>>>>>>> a8f3e73 (Проверьте пожалуйста сейчас)
+  </component>
+</project>
