@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0667d59a-3ec2-4ebc-86ef-29edd71495d9" name="Changes" comment="все!">
-      <change afterPath="$PROJECT_DIR$/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/10_OOP3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="0667d59a-3ec2-4ebc-86ef-29edd71495d9" name="Changes" comment="все !!! &#10;# Conflicts:&#10;#&#9;10_OOP3/Converter/.idea/workspace.xml&#10;#&#9;10_OOP3/Converter/src/main/kotlin/CNY.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/Converters.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/CurrencyConverter.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/EURO.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/Main.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/USD.kt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +10,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Interface" />
         <option value="Kotlin File" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -117,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665686624362</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="все !!! &#10;# Conflicts:&#10;#&#9;10_OOP3/Converter/.idea/workspace.xml&#10;#&#9;10_OOP3/Converter/src/main/kotlin/CNY.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/Converters.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/CurrencyConverter.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/EURO.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/Main.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/USD.kt">
+      <created>1665687438581</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665687438581</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +151,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="все!" />
-    <option name="LAST_COMMIT_MESSAGE" value="все!" />
+    <MESSAGE value="все !!! &#10;# Conflicts:&#10;#&#9;10_OOP3/Converter/.idea/workspace.xml&#10;#&#9;10_OOP3/Converter/src/main/kotlin/CNY.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/Converters.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/CurrencyConverter.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/EURO.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/Main.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/USD.kt" />
+    <option name="LAST_COMMIT_MESSAGE" value="все !!! &#10;# Conflicts:&#10;#&#9;10_OOP3/Converter/.idea/workspace.xml&#10;#&#9;10_OOP3/Converter/src/main/kotlin/CNY.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/Converters.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/CurrencyConverter.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/EURO.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/Main.kt&#10;#&#9;10_OOP3/Converter/src/main/kotlin/USD.kt" />
   </component>
 </project>
