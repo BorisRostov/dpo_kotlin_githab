@@ -1,5 +1,9 @@
 
 fun main() {
+    val cor = runB
+
+
+
     var wheel = Wheel()
 
     println("pump up the wheel to")
@@ -37,6 +41,13 @@ class Wheel(var currentpressure: Double = 0.0) {
 
         }
     }
+}
+
+interface Job: CoroutineContext.Element {
+    val isActive: Boolean
+    val isCom
+
+
 }
 
 
