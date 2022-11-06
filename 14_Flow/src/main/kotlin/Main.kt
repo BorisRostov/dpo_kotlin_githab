@@ -1,12 +1,5 @@
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.SharedFlow
-import kotlin.random.Random
-import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.yield
-import kotlin.random.nextInt
 
 fun main(args : Array<String>) {
     var numberPlayers : Int
@@ -19,13 +12,10 @@ fun main(args : Array<String>) {
     val cardsCount : Int = readln().toInt()                                // ?.toIntOrNull() ?: return
     val team = mutableListOf<Players>()
 
-
     for (i in 1..numberPlayers) {
         println("Enter the player's name:")
         Players(readln(), cardsCount).let { team.add(it) }
     }
-    Thread.sleep(300)
-
     team.forEach {
         println("The player ${it.name} has cards:")
         it.createCardPlayers()
@@ -35,13 +25,11 @@ fun main(args : Array<String>) {
             launch {
                 Generator.flow.collect { number ->
                     println("A barrel with a number $number")
-                    delay(1000)
-                    println("win numbers from ${playersNames.name} = ${playersNames.winNumCoun}")
-
-//                    playersNames.getNumber(number)
-                    println(playersNames.cards)
+                    delay(100)
+                    playersNames.getNumber(number)
+                    println("${playersNames.name} closed numbers are - ${playersNames.winNumCoun}")
                     if (playersNames.winNumCoun == cardsCount * 15) {
-                        println("Win ${playersNames.name}")
+                        println("--------- Win ${playersNames.name} -----------------")
                         cancel()
                     }
                 }
@@ -49,10 +37,8 @@ fun main(args : Array<String>) {
         }
     }
 }
-
 object Generator {
     var flow = (1..90).shuffled().asFlow()
-
 }
 
 

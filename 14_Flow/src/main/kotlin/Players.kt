@@ -2,14 +2,13 @@ class Players (
     val name: String,
     val cardCount: Int ) {
     var winNumCoun = 0
-
-//    var cards = createCardPlayers()
-    var cards = mutableListOf<MutableList<MutableList<Int>>>()
+    var cards: MutableList<MutableList<MutableList<Int>>>  = mutableListOf()
 
     fun createCardPlayers() : MutableList<MutableList<MutableList<Int>>> {
-    //    var cards = mutableListOf<MutableList<MutableList<Int>>>()
+//    var cards = mutableListOf<MutableList<MutableList<Int>>>()
         for (i in 1..cardCount) {
-            cards.add(Cards().creatCards() as MutableList<MutableList<Int>>)
+//            cards.add(Cards().createCards(Cards().card) as MutableList<MutableList<Int>>)
+            cards.add(Cards().card)
         }
         return cards
     }
@@ -25,10 +24,7 @@ class Players (
                     }
                 }
                 line.removeAll(numberRem)
-
             }
         }
     }
 }
-
-

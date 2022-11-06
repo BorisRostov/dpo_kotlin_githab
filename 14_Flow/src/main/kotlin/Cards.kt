@@ -1,27 +1,23 @@
 class Cards {
-    var row1 = mutableListOf<Int>()
-    var row2 = mutableListOf<Int>()
-    var row3 = mutableListOf<Int>()
-    private val cardNumbers = mutableListOf<Int>()
-    private var card : MutableList<MutableList<Int>> = mutableListOf()
-
+    var row1 = MutableList(9){0}
+    var row2 = MutableList(9){0}
+    var row3 = MutableList(9){0}
+    var card = mutableListOf(row1,row2,row3)
     init {
         row1 = fillRow(row2, row3)
         row2 = fillRow(row1, row3)
         row3 = fillRow(row1, row2)
-        card = fillCard(row1, row2, row3)
-        for (i in 0..4) {
-            cardNumbers.add(row1[i])
-            cardNumbers.add(row2[i])
-            cardNumbers.add(row3[i])
-        }
-        cardNumbers.sort()
+        card = fillcard(row1, row2, row3)
     }
-
-    private fun fillRow(row2Temp : MutableList<Int>, row3Temp : MutableList<Int>) : MutableList<Int> {
+    fun fillcard(row1: MutableList<Int>, row2: MutableList<Int>, row3: MutableList<Int>): MutableList<MutableList<Int>>{
+        var card = mutableListOf<MutableList<Int>>()
+        card = mutableListOf(row1,row2,row3)
+        printCards(card)
+        return card
+    }
+    fun fillRow(row2Temp : MutableList<Int>, row3Temp : MutableList<Int>) : MutableList<Int> {
         val numbers = mutableListOf<Int>()
         for (number in 1..90) numbers.add(number)
-
         val row1temp = mutableListOf<Int>()
         var rowCount = 0
         val tempNumb : MutableList<Int> = numbers
@@ -31,15 +27,15 @@ class Cards {
                 if (tempNumb.contains(temp)) {
                     row1temp.add(temp)
                     when (temp) {
-                        in 1..9 -> tempNumb.removeAll(tempColumn1)
-                        in 10..19 -> tempNumb.removeAll(tempColumn2)
-                        in 20..29 -> tempNumb.removeAll(tempColumn3)
-                        in 30..39 -> tempNumb.removeAll(tempColumn4)
-                        in 40..49 -> tempNumb.removeAll(tempColumn5)
-                        in 50..59 -> tempNumb.removeAll(tempColumn6)
-                        in 60..69 -> tempNumb.removeAll(tempColumn7)
-                        in 70..79 -> tempNumb.removeAll(tempColumn8)
-                        in 80..90 -> tempNumb.removeAll(tempColumn9)
+                        in 1..9 -> tempNumb.removeAll(mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9))
+                        in 10..19 -> tempNumb.removeAll(mutableListOf(10, 11, 12, 13, 14, 15, 16, 17, 18, 19))
+                        in 20..29 -> tempNumb.removeAll(mutableListOf(20, 21, 22, 23, 24, 25, 26, 27, 28, 29))
+                        in 30..39 -> tempNumb.removeAll(mutableListOf(30, 31, 32, 33, 34, 35, 36, 37, 38, 39))
+                        in 40..49 -> tempNumb.removeAll(mutableListOf(40, 41, 42, 43, 44, 45, 46, 47, 48, 49))
+                        in 50..59 -> tempNumb.removeAll(mutableListOf(50, 51, 52, 53, 54, 55, 56, 57, 58, 59))
+                        in 60..69 -> tempNumb.removeAll(mutableListOf(60, 61, 62, 63, 64, 65, 66, 67, 68, 69))
+                        in 70..79 -> tempNumb.removeAll(mutableListOf(70, 71, 72, 73, 74, 75, 76, 77, 78, 79))
+                        in 80..90 -> tempNumb.removeAll(mutableListOf(80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90))
                     }
                     rowCount++
                 }
@@ -49,11 +45,7 @@ class Cards {
         return row1temp
     }
 
-    private fun fillCard(row1 : MutableList<Int>,  row2 : MutableList<Int>, row3 : MutableList<Int>) : MutableList<MutableList<Int>> {
-        return mutableListOf(row1, row2, row3)
-    }
-
-    fun creatCards(): MutableList<MutableList<String>>  {
+    fun printCards(card: MutableList<MutableList<Int>>) : MutableList<MutableList<String>> {
         val cardTemp = MutableList(3) { MutableList(9) { "  " } }
         println("----------------------------------------------")
         for (column in 0..2) {
@@ -73,24 +65,11 @@ class Cards {
                     }
                 }
                 print(" ${cardTemp[column][row]} |")
+
             }
             println()
         }
         println("----------------------------------------------")
         return cardTemp
     }
-
-    private companion object {
-        private val tempColumn1 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-        private val tempColumn2 = mutableListOf(10, 11, 12, 13, 14, 15, 16, 17, 18, 19)
-        private val tempColumn3 = mutableListOf(20, 21, 22, 23, 24, 25, 26, 27, 28, 29)
-        private val tempColumn4 = mutableListOf(30, 31, 32, 33, 34, 35, 36, 37, 38, 39)
-        private val tempColumn5 = mutableListOf(40, 41, 42, 43, 44, 45, 46, 47, 48, 49)
-        private val tempColumn6 = mutableListOf(50, 51, 52, 53, 54, 55, 56, 57, 58, 59)
-        private val tempColumn7 = mutableListOf(60, 61, 62, 63, 64, 65, 66, 67, 68, 69)
-        private val tempColumn8 = mutableListOf(70, 71, 72, 73, 74, 75, 76, 77, 78, 79)
-        private val tempColumn9 = mutableListOf(80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90)
-    }
-
-
 }
