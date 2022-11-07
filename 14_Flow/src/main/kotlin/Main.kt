@@ -1,7 +1,7 @@
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.asFlow
 
-fun main(args : Array<String>) {
+fun main() {
     var numberPlayers : Int
     do {
         println("Enter the number of lotto players:")
@@ -20,14 +20,10 @@ fun main(args : Array<String>) {
         println("The player ${it.name} has cards:")
         it.createCardPlayers()
     }
-
     runBlocking {
-        launch {
-            Generator.flow.collect { number ->
-                team.forEach { playersNames ->
-
-
-
+        team.forEach { playersNames ->
+            launch {
+                Generator.flow.collect { number ->
                     println("A barrel with a number $number")
                     delay(100)
                     playersNames.getNumber(number)
@@ -44,6 +40,7 @@ fun main(args : Array<String>) {
 object Generator {
     var flow = (1..90).shuffled().asFlow()
 }
+
 
 
 
