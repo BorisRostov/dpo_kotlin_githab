@@ -20,10 +20,14 @@ fun main(args : Array<String>) {
         println("The player ${it.name} has cards:")
         it.createCardPlayers()
     }
+
     runBlocking {
-        team.forEach { playersNames ->
-            launch {
-                Generator.flow.collect { number ->
+        launch {
+            Generator.flow.collect { number ->
+                team.forEach { playersNames ->
+
+
+
                     println("A barrel with a number $number")
                     delay(100)
                     playersNames.getNumber(number)
