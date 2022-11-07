@@ -21,6 +21,8 @@ abstract class AbstractWeapon(
         magazineisEmpty()
     }
 
+
+
     open fun getAmmo(): Stack<Ammo> {
         val stackForShot : Stack<Ammo> = Stack()
         when (fireType) {
