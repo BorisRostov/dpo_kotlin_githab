@@ -2,19 +2,20 @@ class Cards {
     var row1 = MutableList(9){0}
     var row2 = MutableList(9){0}
     var row3 = MutableList(9){0}
-    var card = mutableListOf(row1,row2,row3)
+    var card = listOf(row1.toList(),row2.toList(),row3.toList())
     init {
         row1 = fillRow(row2, row3)
         row2 = fillRow(row1, row3)
         row3 = fillRow(row1, row2)
         card = fillcard(row1, row2, row3)
     }
-    fun fillcard(row1: MutableList<Int>, row2: MutableList<Int>, row3: MutableList<Int>): MutableList<MutableList<Int>>{
-        var card = mutableListOf<MutableList<Int>>()
-        card = mutableListOf(row1,row2,row3)
+
+    fun fillcard(r1: List<Int>, r2: List<Int>, r3: List<Int>): List<List<Int>> {
+        val card = listOf(r1,r2,r3)
         printCards(card)
         return card
     }
+
     fun fillRow(row2Temp : MutableList<Int>, row3Temp : MutableList<Int>) : MutableList<Int> {
         val numbers = mutableListOf<Int>()
         for (number in 1..90) numbers.add(number)
@@ -44,8 +45,7 @@ class Cards {
         row1temp.sort()
         return row1temp
     }
-
-    fun printCards(card: MutableList<MutableList<Int>>) : MutableList<MutableList<String>> {
+    fun printCards(card : List<List<Int>>) : List<List<String>> {
         val cardTemp = MutableList(3) { MutableList(9) { "  " } }
         println("----------------------------------------------")
         for (column in 0..2) {
