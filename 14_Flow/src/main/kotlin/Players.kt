@@ -5,10 +5,8 @@ class Players (
     var cards: MutableList<MutableList<MutableList<Int>>>  = mutableListOf()
 
     fun createCardPlayers() : MutableList<MutableList<MutableList<Int>>> {
-//    var cards = mutableListOf<MutableList<MutableList<Int>>>()
-        for (i in 1..cardCount) {
-//            cards.add(Cards().createCards(Cards().card) as MutableList<MutableList<Int>>)
-            cards.add(Cards().card)
+        for (i in 1..cardCount) {        
+            cards.add(Cards().card as MutableList<MutableList<Int>>)
         }
         return cards
     }
