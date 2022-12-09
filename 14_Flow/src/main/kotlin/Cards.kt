@@ -48,6 +48,7 @@ class Cards {
     fun printCards(card : List<List<Int>>) : List<List<String>> {
         val cardTemp = MutableList(3) { MutableList(9) { "  " } }
         println("----------------------------------------------")
+        println("----------------------------------------------")
         for (column in 0..2) {
             print("|")
             for (row in 0..8) {
