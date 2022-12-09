@@ -8,7 +8,9 @@ fun main() {
         numberPlayers = readLine()?.toIntOrNull() ?: return
     } while (numberPlayers <= 0)
 
-    println("Enter the number of cards:")
+    println("Number of cards ?" +
+            "Enter the number of cards:")
+
     val cardsCount : Int = readln().toInt()                                // ?.toIntOrNull() ?: return
     val team = mutableListOf<Players>()
 
